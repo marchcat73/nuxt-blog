@@ -53,6 +53,21 @@ export default {
       }
     }
   },
+
+  mounted() {
+    const {message} = this.$route.query
+
+    switch (message) {
+      case 'login':
+        this.$message.warning('Для начала войдите в систему')
+        break
+      case 'logout':
+        this.$message.info('Вы покинули систему')
+        break
+    }
+
+  },
+
   methods: {
     onSubmit() {
       this.$refs.form.validate(async valid => {

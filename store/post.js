@@ -22,7 +22,15 @@ export const actions = {
   
 	async update({}, {id, text}) {
 
-	},
+  },
+  
+  async create({}, {title, text}) {
+		return new Promise(resolve => {
+			setTimeout(() => {
+				resolve()
+			}, 1000)
+		})
+  },
 
 	async fetchAdminById({}, id) {
 		return new Promise(resolve => {

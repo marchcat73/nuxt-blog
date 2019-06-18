@@ -9,7 +9,7 @@
     <h2 class="mb">Создание поста</h2>
     <el-form-item label="Введите название поста" prop="title">
       <el-input
-        v-model.trim="controls.title"
+        v-model="controls.title"
       ></el-input>
     </el-form-item>
     <el-form-item label="Текст в формате .md или .html" prop="text">

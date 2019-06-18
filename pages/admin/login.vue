@@ -63,7 +63,10 @@ export default {
         break
       case 'logout':
         this.$message.info('Вы покинули систему')
-        break
+				break
+			case 'session':
+				this.$message.warning('Сессия закончилась')
+				break
     }
 
   },

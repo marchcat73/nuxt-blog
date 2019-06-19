@@ -6,14 +6,14 @@
       class="post"
     >
     <header slot="header" class="post-header">
-      <h3>Post title</h3>
+      <h3>{{ post.title }}</h3>
       <small>
         <i class="el-icon-time"></i>
-        {{ new Date().toLocaleString() }}
+        {{ new Date(post.date).toLocaleString() }}
       </small>
     </header>
     <div class="post-body">
-      <img src="http://www.go2festival.com/wp-content/uploads/2016/04/berlin-4.jpg" alt="" class="post-img">
+      <img :src="post.imageUrl" alt="" class="post-img">
     </div>
     <footer class="post-footer">
       <el-button round @click="openPost">Open</el-button>
@@ -28,9 +28,15 @@
 
 <script>
 export default {
+	props: {
+		post: {
+			type: Object,
+			required: true
+		}
+	},
   methods: {
     openPost() {
-      const id = 'test-id'
+      const id = this.post._id
       this.$router.push(`/post/${id}`)
     }
   }

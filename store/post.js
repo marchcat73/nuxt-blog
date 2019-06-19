@@ -9,6 +9,15 @@ export const actions = {
 		}
 	},
 
+	async fetch({commit}) {
+		try {
+			return await this.$axios.$get('/api/post')
+		} catch (err) {
+      commit('setError', err, {root: true})
+      throw err
+		}
+	},
+
 	async remove({commit}, id) {
 		try {
 			return await this.$axios.$delete(`/api/post/admin/${id}`)
@@ -47,6 +56,24 @@ export const actions = {
 	async fetchAdminById({commit}, id) {
 		try {
 			return await this.$axios.$get(`/api/post/admin/${id}`)
+		} catch (err) {
+      commit('setError', err, {root: true})
+      throw err
+		}
+	},
+
+	async fetchById({commit}, id) {
+		try {
+			return await this.$axios.$get(`/api/post/${id}`)
+		} catch (err) {
+      commit('setError', err, {root: true})
+      throw err
+		}
+	},
+
+	async addView({commit}, {views, _id}) {
+		try {
+			return await this.$axios.$put(`/api/post/add/view/${_id}`, {views})
 		} catch (err) {
       commit('setError', err, {root: true})
       throw err

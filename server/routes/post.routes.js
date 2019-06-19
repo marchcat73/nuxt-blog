@@ -22,7 +22,7 @@ router.get(
 router.get(
   '/admin/:id',
   passport.authenticate('jwt', {session: false}),
-  ctr.getAll
+  ctr.getById
 )
 
 router.put(

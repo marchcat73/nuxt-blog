@@ -14,7 +14,7 @@
       <el-form-item label="Текст в формате .md или .html" prop="text">
         <el-input
           type="textarea"
-          v-model.trim="controls.text"
+          v-model="controls.text"
           resize="none"
           :rows="10"
         ></el-input>
@@ -56,7 +56,7 @@ export default {
   },
 
   async asyncData({store, params}) {
-	  const post = await store.dispatch('post/fetchAdminById', params.id)
+		const post = await store.dispatch('post/fetchAdminById', params.id)
 	  return {post}
   },
 
@@ -97,6 +97,10 @@ export default {
         }
       })
     }
-  }
+	},
+	
+	mounted () {
+		this.controls.text = this.post.text
+	}
 }
 </script>

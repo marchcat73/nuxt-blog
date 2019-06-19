@@ -37,10 +37,18 @@ router.delete(
   ctr.remove
 )
 
+router.get(
+	'/admin/get/analitycs',
+	passport.authenticate('jwt', {session: false}),
+	ctr.getAnalitycs
+)
+
 // Base
 // /api/post
 router.get('/', ctr.getAll)
 router.get('/:id', ctr.getById)
 router.put('/add/view/:id', ctr.addView)
+
+
 
 module.exports = router

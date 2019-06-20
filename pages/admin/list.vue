@@ -58,6 +58,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `${process.env.appName} | Все посты`
+    }    
+  },
   layout: 'admin',
   middleware: ['admin-auth'],
   async asyncData({store}) {

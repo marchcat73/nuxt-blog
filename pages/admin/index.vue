@@ -17,6 +17,11 @@
 <script>
 import AppAnalitycsChart from '@/components/admin/AnalitycChart'
 export default {
+  head() {
+    return {
+      title: `${process.env.appName} | Аналитика`
+    }    
+  },
   layout: 'admin',
 	middleware: ['admin-auth'],
 	async asyncData({store}) {

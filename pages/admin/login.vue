@@ -34,6 +34,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `${process.env.appName} | Вход в панель администрации`
+    }    
+  },
   layout: 'empty',
   data() {
     return {

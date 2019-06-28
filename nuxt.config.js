@@ -28,9 +28,10 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css',
+		'element-ui/lib/theme-chalk/index.css',
+		'swiper/dist/css/swiper.css',
 		'@/theme/index.scss',
-		'swiper/dist/css/swiper.css'
+
   ],
 
   /*

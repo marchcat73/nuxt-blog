@@ -29,7 +29,8 @@ module.exports = {
   */
   css: [
     'element-ui/lib/theme-chalk/index.css',
-    '@/theme/index.scss'
+		'@/theme/index.scss',
+		'swiper/dist/css/swiper.css'
   ],
 
   /*
@@ -37,7 +38,8 @@ module.exports = {
   */
   plugins: [
 		'@/plugins/globals',
-		'@/plugins/axios'
+		'@/plugins/axios',
+		{ src: '~plugins/vue-awesome-swiper', ssr: false }
   ],
 
   /*
@@ -67,7 +69,10 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    transpile: [/^element-ui/],
+		transpile: [/^element-ui/],
+		// vendor: [
+    //   'vue-awesome-swiper'
+    // ],
     
     /*
     ** You can extend webpack config here

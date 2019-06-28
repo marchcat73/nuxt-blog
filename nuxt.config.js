@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const axios = require('axios')
 
 
 module.exports = {
@@ -48,10 +49,29 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+		'@nuxtjs/axios',
+		'@nuxtjs/sitemap',
     '@nuxtjs/pwa'
   ],
-
+	sitemap: {
+		hostname: 'http://localhost',
+		gzip: false,
+		exclude: [
+			'/admin',
+			'/admin/*'
+		],
+    routes () {
+      return axios.get('http://localhost:3000/api/post')
+        .then(res => res.data.map(post => '/post/' + post._id))
+    },
+		xmlNs: 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+		defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+      lastmodrealtime: true
+    }
+	},
   workbox: {
 
   },

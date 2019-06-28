@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
+    "@nuxtjs/sitemap": "^1.2.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "chart.js": "^2.8.0",
